@@ -1,13 +1,13 @@
-type ObjectConstructor<TInstance = unknown> = new (page: any) => TInstance;
-type ObjectMap = Record<string, ObjectConstructor>;
+type ObjectConstructor<TArg, TInstance = unknown> = new (page: TArg) => TInstance;
+type ObjectMap<TArg> = Record<string, ObjectConstructor<TArg>>;
 
-type LazyObjects<T extends ObjectMap> = {
+type LazyObjects<T extends Record<string, new (...args: never[]) => unknown>> = {
   [K in keyof T]: InstanceType<T[K]>;
 };
 
-export function createLazyObjects<T extends ObjectMap, Obj>(
+export function createLazyObjects<Obj, T extends ObjectMap<Obj>>(
   objects: T,
-  obj: Obj
+  obj: Obj,
 ): LazyObjects<T> {
   const cache: Partial<LazyObjects<T>> = {};
 

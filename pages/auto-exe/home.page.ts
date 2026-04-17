@@ -8,11 +8,11 @@ export class HomePage extends BasePage {
 
   get elements() {
     return {
-        ...super.elements,
-    }
+      ...super.elements,
+    };
   }
 
   async goto() {
-    await this.page.goto('/');
+    await this.page.goto("/");
   }
 }

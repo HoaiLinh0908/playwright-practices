@@ -1,6 +1,6 @@
 import { test, expect } from "@fixtures/auto-exe.page.fixture";
 
-test("Test Case 1: Register User", async ({ autoExercise }) => {
+test("TC1: Register user", async ({ autoExercise }) => {
   await test.step("Navigate to Automation Exercise home page", async () => {
     await autoExercise.HomePage.goto();
   });

@@ -13,14 +13,9 @@
     "types": ["node", "@playwright/test"],
     "paths": {
       "@pages": ["./pages/index.ts"],
-      "@fixtures/*": ["./fixtures/*"],
+      "@fixtures/*": ["./fixtures/*"]
     }
   },
-  "include": [
-    "fixtures/**/*.ts",
-    "pages/**/*.ts",
-    "tests/**/*.ts",
-    "*.ts"
-  ],
+  "include": ["fixtures/**/*.ts", "pages/**/*.ts", "tests/**/*.ts", "*.ts"],
   "exclude": ["node_modules", "test-results", "playwright-report"]
 }

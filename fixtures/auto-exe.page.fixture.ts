@@ -1,5 +1,5 @@
 import { test as base } from "@playwright/test";
-import {createLazyObjects} from "./lazy-init";
+import { createLazyObjects } from "./lazy-init";
 import * as Pages from "@pages";
 
 type PageConstructors = {

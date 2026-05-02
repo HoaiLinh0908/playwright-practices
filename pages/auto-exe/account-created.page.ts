@@ -1,7 +1,7 @@
 import { Page } from "@playwright/test";
 import { AutoExeBasePage } from "./base.page.js";
 
-export class HomePage extends AutoExeBasePage {
+export class AccountCreatedPage extends AutoExeBasePage {
   constructor(page: Page) {
     super(page);
   }
@@ -9,10 +9,7 @@ export class HomePage extends AutoExeBasePage {
   get elements() {
     return {
       ...super.elements,
+      title: () => this.page.getByRole("heading", { name: "Account Created!" }),
     };
-  }
-
-  async goto() {
-    await this.page.goto("/");
   }
 }

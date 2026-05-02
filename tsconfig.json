@@ -2,8 +2,8 @@
   "compilerOptions": {
     "target": "ES2022",
     "lib": ["ES2022"],
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "module": "Node16",
+    "moduleResolution": "node16",
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -12,8 +12,9 @@
     "resolveJsonModule": true,
     "types": ["node", "@playwright/test"],
     "paths": {
-      "@pages": ["./pages/index.ts"],
-      "@fixtures/*": ["./fixtures/*"]
+      "@pages/*": ["./pages/*"],
+      "@fixtures/*": ["./fixtures/*"],
+      "@test-data/*": ["./test-data/*"]
     }
   },
   "include": ["fixtures/**/*.ts", "pages/**/*.ts", "tests/**/*.ts", "*.ts"],
